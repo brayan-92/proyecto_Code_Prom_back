@@ -9,14 +9,14 @@ dotenv.config();
 const app = express();
 
 const corsOptions = {
-  origin: "https://proyecto-code-prom-front.vercel.app",
+  origin: "https://proyecto-code-prom-front.vercel.app/login",
   methods: ["GET", "POST", "PATCH"],
   allowedHeaders: ["Content-Type", "Authorization"],
 };
 
 app.use(express.json());
 app.use(cors(corsOptions));
-app.get ('/', (req, res) => {
+app.get ('/', async (req, res) => {
   res.send('backend desplegado');
 });
 app.use(express.urlencoded({ extended: true }));
