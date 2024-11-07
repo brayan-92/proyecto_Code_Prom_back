@@ -9,7 +9,7 @@ dotenv.config();
 const app = express();
 
 const corsOptions = {
-  origin: "http://localhost:5173",
+  origin: "https://proyecto-code-prom-front.vercel.app/",
   methods: ["GET", "POST", "PATCH"],
   allowedHeaders: ["Content-Type", "Authorization"],
 };
