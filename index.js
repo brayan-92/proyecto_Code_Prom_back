@@ -7,6 +7,7 @@ import { connect } from './mongodb.js';
 dotenv.config();
 
 const app = express();
+const PORT = process.env.PORT || 3002;
 
 const corsOptions = {
   origin: "https://proyecto-code-prom-front.vercel.app",
@@ -16,15 +17,15 @@ const corsOptions = {
 
 app.use(express.json());
 app.use(cors(corsOptions));
+app.use(express.urlencoded({ extended: true }));
+app.use('/api', router);
 app.get ('/', async (req, res) => {
   res.send('backend desplegado');
 });
-app.use(express.urlencoded({ extended: true }));
-app.use('/api', router);
 
 connect();
 
-const PORT = process.env.PORT || 3002;
+
 
 app.listen(port, () => {
   console.log('Server running on port ${port}');
