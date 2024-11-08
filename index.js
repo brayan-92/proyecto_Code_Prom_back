@@ -24,7 +24,8 @@ app.use('/api', router);
 
 connect();
 
+const PORT = process.env.PORT || 3002;
 
-app.listen(3002, () => {
-  console.log('Server running on port 3002');
+app.listen(port, () => {
+  console.log('Server running on port ${port}');
 });
